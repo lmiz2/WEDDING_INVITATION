@@ -3,7 +3,6 @@ import { Button, Divider, message, Modal } from "antd";
 import { CheckCircleTwoTone } from "@ant-design/icons";
 import styled from "styled-components";
 import CopyToClipboard from "react-copy-to-clipboard";
-import Flower from "../assets/flower3.png";
 import {
   GROOM_NAME,
   GROOM_ACCOUNT_NUMBER,
@@ -83,19 +82,17 @@ const CongratulatoryMoney = () => {
   return (
     <Wrapper>
       <Divider
-        data-aos="fade-up"
         plain
         style={{ marginTop: 0, marginBottom: 32 }}
       >
         <Title>축하의 마음을 전하세요</Title>
       </Divider>
-      <Image src={Flower} />
-      <Content data-aos="fade-up">
+      <Content>
         축하의 마음을 담아 축의금을 전달해 보세요.
       </Content>
 
       <ButtonWrap>
-        <ContactButton data-aos="fade-up" onClick={() => setGroomVisible(true)}>
+        <ContactButton onClick={() => setGroomVisible(true)}>
           <CheckCircleTwoTone
             style={{ fontSize: 64, marginBottom: 16 }}
             twoToneColor="#829fe0"
@@ -103,7 +100,7 @@ const CongratulatoryMoney = () => {
           <br />
           <SubContent>신랑측 계좌번호 확인</SubContent>
         </ContactButton>
-        <ContactButton data-aos="fade-up" onClick={() => setBrideVisible(true)}>
+        <ContactButton onClick={() => setBrideVisible(true)}>
           <CheckCircleTwoTone
             style={{ fontSize: 64, marginBottom: 16 }}
             twoToneColor="#fe7daf"

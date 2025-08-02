@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import QuotePaper from "../assets/Quote.png";
-import Flower from "../assets/flower1.png";
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -37,8 +36,7 @@ const Image = styled.img`
 const Quote = () => {
   return (
     <Wrapper>
-      <Image src={Flower} data-aos="fade-up" />
-      <Content data-aos="fade-up">
+      <Content>
         장담하건대. 세상이 다 겨울이어도
         <br />
         우리 사랑은 늘봄처럼 따뜻하고
