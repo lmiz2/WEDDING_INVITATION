@@ -19,13 +19,6 @@ const Title = styled.span`
   margin-bottom: 0;
 `;
 
-const Image = styled.img`
-  display: block;
-  margin: 0 auto;
-  width: 1.375rem;
-  padding-bottom: 42px;
-`;
-
 const Content = styled.p`
   font-size: 0.875rem;
   line-height: 1.75;
