@@ -4,8 +4,6 @@ import {
   IMAGE_URL_PREFIX,
   WEDDING_DATE,
   WEDDING_LOCATION,
-  GROOM_NAME,
-  BRIDE_NAME,
 } from "../../config.js";
 
 
@@ -13,6 +11,8 @@ const Layout = styled.div`
   width: 70%;
   overflow: hidden;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 `;
 
 const TitleWrapper = styled.div`
@@ -28,24 +28,24 @@ const TitleWrapper = styled.div`
 `;
 
 const GifBackground = styled.img`
-  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100vh; // 필요시 전체 높이
   object-fit: cover;
-  display: block;
-  margin: 0 auto;
+  z-index: 0;
+  pointer-events: none; // 클릭 방지
 `;
 
 const WeddingInvitation = styled.p`
+  color: #ffffff;
   font-size: 6rem;
   font-family: "abramo";
-  opacity: 0.45;
+  opacity: 0.75;
   margin-bottom: 16px;
-`;
-
-const GroomBride = styled.p`
-  font-size: 1.5rem;
-  font-weight: bold;
-  opacity: 0.9;
-  margin-bottom: 16px;
+  z-index: 0;
 `;
 
 const Schedule = styled.p`
@@ -55,20 +55,19 @@ const Schedule = styled.p`
 `;
 const Title = () => {
   return (
+  <div style={{ position: "relative" }}>
+    <GifBackground src={IMAGE_URL_PREFIX + "/0.gif"} alt="배경 GIF" />
+    <WeddingInvitation>WEDDING INVITATION</WeddingInvitation>
     <Layout>
       <TitleWrapper>
-        <WeddingInvitation>WEDDING INVITATION</WeddingInvitation>
-        <GroomBride>
-          {GROOM_NAME} &#38; {BRIDE_NAME}
-        </GroomBride>
         <Schedule>
           {WEDDING_DATE}
           <br />
           {WEDDING_LOCATION}
         </Schedule>
       </TitleWrapper>
-      <GifBackground src={IMAGE_URL_PREFIX + "/0.gif"} alt="배경 GIF" />
     </Layout>
+  </div>
   );
 };
 

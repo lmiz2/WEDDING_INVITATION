@@ -43,13 +43,6 @@ const GroomBride = styled.p`
   text-align: center;
 `;
 
-const Image = styled.img`
-  display: block;
-  margin: 0 auto;
-  width: 1.375rem;
-  padding-bottom: 42px;
-`;
-
 const Greeting = () => {
   return (
     <Wrapper>
@@ -72,9 +65,9 @@ const Greeting = () => {
         앞날을 축복해 주시면 감사하겠습니다.
       </Content>
       <GroomBride >
-        {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}의 장남 {GROOM_NAME}
+        {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}의 아들 {GROOM_NAME}
         <br />
-        {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}의 장녀 {BRIDE_NAME}
+        {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}의 딸 {BRIDE_NAME}
       </GroomBride>
     </Wrapper>
   );
