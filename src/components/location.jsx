@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { Divider } from "antd";
 import styled from "styled-components";
+import {
+  KAKAOTALK_API_TOKEN,
+} from "../../config";
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -36,88 +39,89 @@ const Content = styled.p`
 
 const Map = styled.div`
   width: 100%;
+  height: 300px;
   padding: 0;
 `;
 
 const Location = () => {
-  // 카카오 맵 불러오기
-
-  // <!-- 3. 실행 스크립트 -->
-  const executeScript = () => {
-    const scriptTag = document.createElement("script");
-    const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-    "timestamp" : "1652464367301",
-    "key" : "2a8fe",
-    "mapWidth" : "640",
-    "mapHeight" : "360"
-  }).render();`);
-    scriptTag.appendChild(inlineScript);
-    document.body.appendChild(scriptTag);
-  };
-
-  // <!-- 2. 설치 스크립트 * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다. -->
-  // document.write 문제가 발생해서 해당 파일을 직접 가져온다음 수정했음
-  const InstallScript = () => {
-    (function () {
-      let c = window.location.protocol === "https:" ? "https:" : "http:";
-      let a = "16137cec";
-
-      if (window.daum && window.daum.roughmap && window.daum.roughmap.cdn) {
-        return;
-      }
-      window.daum = window.daum || {};
-      window.daum.roughmap = {
-        cdn: a,
-        URL_KEY_DATA_LOAD_PRE: c + "//t1.daumcdn.net/roughmap/",
-        url_protocal: c,
-      };
-      let b =
-        c +
-        "//t1.daumcdn.net/kakaomapweb/place/jscss/roughmap/" +
-        a +
-        "/roughmapLander.js";
-
-      // document.write -> doumnet.body.append로 수정
-      const scriptTag = document.createElement("script");
-      scriptTag.src = b;
-      document.body.append(scriptTag);
-      scriptTag.onload = () => {
-        executeScript();
-      };
-    })();
-  };
 
   useEffect(() => {
-    InstallScript();
-  }, [InstallScript]);
+    function createKakaoMap() {
+      const container = document.getElementById("map_container1");
+      if (!container) return;
+      const targetPosition = new window.kakao.maps.LatLng(37.387564, 127.122331)
+      const options = {
+        center: targetPosition,
+        level: 3,
+      };
+      const map = new window.kakao.maps.Map(container, options);
+
+      new window.kakao.maps.Marker({
+        map: map,
+        position: targetPosition,
+      });
+    }
+
+    // 기존에 script가 있는지 체크
+    if (!document.querySelector('script[src*="dapi.kakao.com"]')) {
+      const script = document.createElement("script");
+      // autoload=false 추가!
+      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAOTALK_API_TOKEN}&autoload=false`;
+      script.async = true;
+      document.body.appendChild(script);
+
+      script.onload = () => {
+        // window.kakao.maps.load를 통해 완전히 준비되면 콜백 실행
+        window.kakao.maps.load(() => {
+          createKakaoMap();
+        });
+      };
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    } else {
+      // 이미 script가 있으면 바로 load (중복생성 안되게 체크)
+      if (window.kakao && window.kakao.maps && window.kakao.maps.load) {
+        window.kakao.maps.load(() => {
+          createKakaoMap();
+        });
+      }
+    }
+  }, []);
 
   return (
     <Wrapper>
       <Divider plain style={{ marginTop: 0, marginBottom: 32 }}>
         <Title>오시는 길</Title>
       </Divider>
-      <Map
-        id="daumRoughmapContainer1652464367301"
-        className="root_daum_roughmap root_daum_roughmap_landing"
-      ></Map>
+      <Map id="map_container1"></Map>
       <Content>
-        대구 수성구 두산동 888-2번지
+        경기도 성남시 분당구 서현로 180번길 19
         <br />
-        호텔수성 수성스퀘어 3층 피오니홀
+        THE MERRIDEN 서현 (CGV 건물 8층)
         <br />
         <br />
         <Title>버스 이용시</Title>
         <br />
         <br />
-        410-1, 401 호텔수성 앞 하차
+        이매촌(한신아파트 앞) 정류장
         <br />
-        수성1-1, 수성3-1, 814 TBC방송국 앞 하차
+        2, 33, 55-1, 116, 222, 303, 380, 720-2, 102, 303, 1001
+        1005-1, 1151, 1500, 1500-2, 3330, 3500, 5500-1, 7007-1
+        7200, 8130, 8131, 8133, 8151, 9000, 9001, 9005, 9401, 9403
+        9407, 4102, 4000, 8106, 8109
+        <br />
+        <br />
+        AK플라자 (분당우체국 앞) 정류장
+        <br />
+        116, 222, 310, 3500
         <br />
         <br />
         <Title>지하철 이용시</Title>
         <br />
         <br />
-        3호선 수성못역 하차 (도보 10분)
+        분당선 서현역 5번출구 좌측으로 도보3분
       </Content>
     </Wrapper>
   );

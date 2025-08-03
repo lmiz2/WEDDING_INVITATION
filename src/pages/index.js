@@ -12,7 +12,6 @@ import GroovePaper from "../assets/GroovePaper.png";
 import Location from "../components/location";
 import CongratulatoryMoney from "../components/congratulatoryMoney";
 import Share from "../components/share";
-import Song from "../assets/song.mp3";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -34,7 +33,7 @@ const IndexPage = () => {
     document.body.appendChild(script);
 
     return () => {
-      document.body.romoveChile(script);
+      // document.body.removeChile(script);
     };
   }, []);
 
@@ -45,9 +44,6 @@ const IndexPage = () => {
   });
   return (
     <Wrapper>
-      <audio autoPlay loop>
-        <source src={Song} />
-      </audio>
       <Title />
       <Greeting />
       <Gallery />
@@ -62,7 +58,7 @@ const IndexPage = () => {
           textAlign: "center",
         }}
       >
-        Copyright © 2022 Shin Jooyoung
+        { console.log("Copyright © 2022 Shin Jooyoung, opensource repository : https://github.com/S-jooyoung/WEDDING_INVITATION") }
       </Footer>
     </Wrapper>
   );
