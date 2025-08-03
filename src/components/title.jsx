@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {
+  IMAGE_URL_PREFIX,
   WEDDING_DATE,
   WEDDING_LOCATION,
   GROOM_NAME,
@@ -26,8 +27,11 @@ const TitleWrapper = styled.div`
   // -o-animation: fadein 3s; /* Opera */
 `;
 
-const VideoBackground = styled.video`
+const GifBackground = styled.img`
   width: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 `;
 
 const WeddingInvitation = styled.p`
@@ -63,9 +67,7 @@ const Title = () => {
           {WEDDING_LOCATION}
         </Schedule>
       </TitleWrapper>
-      <VideoBackground autoPlay loop muted playsInline={true}>
-        <source src={BackgroundVideo} type="video/mp4" />
-      </VideoBackground>
+      <GifBackground src={IMAGE_URL_PREFIX + "/0.gif"} alt="배경 GIF" />
     </Layout>
   );
 };

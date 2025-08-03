@@ -1,14 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ImageGallery from "react-image-gallery";
 import { Divider } from "antd";
 import styled from "styled-components";
-
-import GalleryPhoto1 from "../assets/Gallery_Photo_1.webp";
-import GalleryPhoto2 from "../assets/Gallery_Photo_2.webp";
-import GalleryPhoto3 from "../assets/Gallery_Photo_3.webp";
-import GalleryPhoto4 from "../assets/Gallery_Photo_4.webp";
-import GalleryPhoto5 from "../assets/Gallery_Photo_5.webp";
-import GalleryPhoto6 from "../assets/Gallery_Photo_6.webp";
+import { IMAGE_URL_PREFIX } from "../../config";
 
 const Wrapper = styled.div`
   padding-top: 42px;
@@ -25,34 +19,20 @@ const Title = styled.p`
   text-align: center;
 `;
 
-const images = [
-  {
-    original: GalleryPhoto1,
-    thumbnail: GalleryPhoto1,
-  },
-  {
-    original: GalleryPhoto2,
-    thumbnail: GalleryPhoto2,
-  },
-  {
-    original: GalleryPhoto3,
-    thumbnail: GalleryPhoto3,
-  },
-  {
-    original: GalleryPhoto4,
-    thumbnail: GalleryPhoto4,
-  },
-  {
-    original: GalleryPhoto5,
-    thumbnail: GalleryPhoto5,
-  },
-  {
-    original: GalleryPhoto6,
-    thumbnail: GalleryPhoto6,
-  },
-];
+const images = [];
 
 const Gallery = () => {
+
+  useEffect(()=>{
+    for(let i = 1; i <= 23; i++) {
+      const imageUrl = IMAGE_URL_PREFIX + `/${i}.jpg`;
+      images.push({
+        original: imageUrl,
+        thumbnail: imageUrl,
+      });
+    }
+  })
+  
   return (
     <Wrapper>
       <Divider style={{ marginTop: 0, marginBottom: 32 }} plain>
