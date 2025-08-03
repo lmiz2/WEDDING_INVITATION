@@ -1,4 +1,4 @@
-export const WEDDING_INVITATION_URL = "https://957be839.wedding-invitation-az6.pages.dev";
+export const WEDDING_INVITATION_URL = "https://wedding-invitation-az6.pages.dev";
 
 export const IMAGE_URL_PREFIX = "https://lmiz.net";
 
