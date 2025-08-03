@@ -1,6 +1,6 @@
 export const WEDDING_INVITATION_URL = "https://957be839.wedding-invitation-az6.pages.dev";
 
-export const IMAGE_URL_PREFIX = "https://pub-14a2c24ac67549c1917ed913da6eadc3.r2.dev";
+export const IMAGE_URL_PREFIX = "https://lmiz.net";
 
 export const KAKAOTALK_API_TOKEN = "14c6dd1a4fe0a45fe8eb005d61e1c57e";
 export const KAKAOTALK_SHARE_IMAGE =
