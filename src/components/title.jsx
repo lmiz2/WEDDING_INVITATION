@@ -21,10 +21,10 @@ const Layout = styled.div`
 
 const GifBackground = styled.img`
   position: absolute;
-  left: 50%;
+  left: 57%;
   top: 0;
   transform: translateX(-50%);
-  width: 100vw;
+  width: 114vw;
   height: 100vh; // 필요시 전체 높이
   object-fit: cover;
   z-index: 0;
