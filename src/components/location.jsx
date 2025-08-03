@@ -92,7 +92,7 @@ const Location = () => {
       <Content>
         경기도 성남시 분당구 서현로 180번길 19
         <br />
-        THE MERRIDEN 서현 (CGV 건물 8층)
+        더 메리든 서현 (CGV 건물 8층)
         <br />
         <br />
         <Title>버스 이용시</Title>

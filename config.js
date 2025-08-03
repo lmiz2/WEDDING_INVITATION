@@ -7,7 +7,7 @@ export const KAKAOTALK_SHARE_IMAGE =
   IMAGE_URL_PREFIX + "/17.jpg";
 
 export const WEDDING_DATE = "2025년 11월 02일, 일요일 오후 15시 30분";
-export const WEDDING_LOCATION = "THE MERRIDEN 서현";
+export const WEDDING_LOCATION = "더 메리든 서현";
 
 export const GROOM_NAME = "송현석";
 export const GROOM_ACCOUNT_NUMBER = "신한은행 110-408-854138";
@@ -17,8 +17,8 @@ export const GROOM_MOTHER_NAME = "이장희";
 export const GROOM_MOTHER_ACCOUNT_NUMBER = "-";
 
 export const BRIDE_NAME = "이혜정";
-export const BRIDE_ACCOUNT_NUMBER = "○○은행 ***-***-******";
+export const BRIDE_ACCOUNT_NUMBER = "우리은행 1002-243-579288";
 export const BRIDE_FATHER_NAME = "이훈";
-export const BRIDE_FATHER_ACCOUNT_NUMBER = "○○은행 ***-***-******";
+export const BRIDE_FATHER_ACCOUNT_NUMBER = "-";
 export const BRIDE_MOTHER_NAME = "오미숙";
-export const BRIDE_MOTHER_ACCOUNT_NUMBER = "○○은행 ***-***-******";
+export const BRIDE_MOTHER_ACCOUNT_NUMBER = "국민은행 655202-01-334690";

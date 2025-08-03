@@ -8,6 +8,8 @@ import {
   BRIDE_NAME,
   BRIDE_FATHER_NAME,
   BRIDE_MOTHER_NAME,
+  WEDDING_DATE,
+  WEDDING_LOCATION,
 } from "../../config";
 
 const Wrapper = styled.div`
@@ -43,26 +45,51 @@ const GroomBride = styled.p`
   text-align: center;
 `;
 
+
+const TitleWrapper = styled.div`
+  width: 100%;
+  text-align: center;
+  // padding-top: 42px;
+  font-weight: 500 !important;
+  color: var(--title-color);
+  // animation: fadein 3s;
+  // -moz-animation: fadein 3s; /* Firefox */
+  // -webkit-animation: fadein 3s; /* Safari and Chrome */
+  // -o-animation: fadein 3s; /* Opera */
+`;
+const Schedule = styled.p`
+  font-size: 1.06rem;
+  opacity: 0.65;
+  margin-bottom: 24px;
+`;
+
 const Greeting = () => {
   return (
     <Wrapper>
       <Divider style={{ marginTop: 32, marginBottom: 32 }} plain>
         <Title >초대합니다</Title>
       </Divider>
+      <TitleWrapper>
+        <Schedule>
+          {WEDDING_DATE}
+          <br />
+          {WEDDING_LOCATION}
+        </Schedule>
+      </TitleWrapper>
       <Content >
-        서로 마주 보며 다져온 사랑을
+        아직은 모든 게 서툰 두 젊은이가
+        <br />
+        서로의 1과 1을 더해 '2'가 되려 합니다.
         <br />
         <br />
-        이제 함께 한곳을 바라보며 걸어갈 수 있는
+        밝고 건강한 앞 날을 꿈꾸는 두 사람에게
+        <br />
+        부디 오셔서 축복과 지혜를 나누어 주세요.
         <br />
         <br />
-        큰 사랑으로 키우고자 합니다.
+        주신 마음의 배가 되는 행복한 삶으로
         <br />
-        <br />
-        저희 두 사람이 사랑의 이름으로 지켜나갈 수 있게
-        <br />
-        <br />
-        앞날을 축복해 주시면 감사하겠습니다.
+        오래도록 보답하며 살겠습니다.
       </Content>
       <GroomBride >
         {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}의 아들 {GROOM_NAME}
