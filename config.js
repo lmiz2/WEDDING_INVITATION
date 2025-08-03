@@ -11,9 +11,9 @@ export const WEDDING_LOCATION = "더 메리든 서현";
 
 export const GROOM_NAME = "송현석";
 export const GROOM_ACCOUNT_NUMBER = "신한은행 110-408-854138";
-export const GROOM_FATHER_NAME = "송명재";
+export const GROOM_FATHER_NAME = "故송명재";
 export const GROOM_FATHER_ACCOUNT_NUMBER = "-";
-export const GROOM_MOTHER_NAME = "이장희";
+export const GROOM_MOTHER_NAME = "故이장희";
 export const GROOM_MOTHER_ACCOUNT_NUMBER = "-";
 
 export const BRIDE_NAME = "이혜정";

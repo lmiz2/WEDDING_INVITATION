@@ -35,7 +35,7 @@ const WeddingInvitation = styled.p`
   color: #ffffff;
   font-size: 6rem;
   font-family: "abramo";
-  opacity: 0.75;
+  opacity: 0.4;
   margin-bottom: 16px;
   text-align: center;
   z-index: 1;
