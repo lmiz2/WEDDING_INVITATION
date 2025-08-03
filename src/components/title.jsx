@@ -7,7 +7,6 @@ import {
   BRIDE_NAME,
 } from "../../config.js";
 import BackgroundVideo from "../assets/BackgroundVideo.mp4";
-import GroovePaper from "../assets/GroovePaper.png";
 
 const Layout = styled.div`
   width: 70%;
@@ -32,7 +31,8 @@ const VideoBackground = styled.video`
 `;
 
 const WeddingInvitation = styled.p`
-  font-size: 0.825rem;
+  font-size: 6rem;
+  font-family: "abramo";
   opacity: 0.45;
   margin-bottom: 16px;
 `;
