@@ -6,7 +6,8 @@ export const KAKAOTALK_API_TOKEN = "14c6dd1a4fe0a45fe8eb005d61e1c57e";
 export const KAKAOTALK_SHARE_IMAGE =
   IMAGE_URL_PREFIX + "/17.jpg";
 
-export const WEDDING_DATE = "2025년 11월 02일, 일요일 오후 15시 30분";
+export const WEDDING_DATE = "2025년 11월 02일, 일요일";
+export const WEDDING_TIME = "오후 15시 30분";
 export const WEDDING_LOCATION = "더 메리든 서현";
 
 export const GROOM_NAME = "송현석";

@@ -9,6 +9,7 @@ import {
   BRIDE_FATHER_NAME,
   BRIDE_MOTHER_NAME,
   WEDDING_DATE,
+  WEDDING_TIME,
   WEDDING_LOCATION,
 } from "../../config";
 
@@ -72,6 +73,8 @@ const Greeting = () => {
       <TitleWrapper>
         <Schedule>
           {WEDDING_DATE}
+          <br />
+          {WEDDING_TIME}
           <br />
           {WEDDING_LOCATION}
         </Schedule>
