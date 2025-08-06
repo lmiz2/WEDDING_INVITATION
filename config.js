@@ -4,7 +4,7 @@ export const IMAGE_URL_PREFIX = "https://lmiz.net";
 
 export const KAKAOTALK_API_TOKEN = "14c6dd1a4fe0a45fe8eb005d61e1c57e";
 export const KAKAOTALK_SHARE_IMAGE =
-  IMAGE_URL_PREFIX + "/17.jpg";
+  IMAGE_URL_PREFIX + "/4.jpg";
 
 export const WEDDING_DATE = "2025년 11월 02일, 일요일";
 export const WEDDING_TIME = "오후 15시 30분";
