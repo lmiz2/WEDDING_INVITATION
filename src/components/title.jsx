@@ -32,7 +32,7 @@ const GifBackground = styled.img`
 `;
 
 const WeddingInvitation = styled.p`
-  color: #ffffff;
+  color: #000000;
   font-size: 6rem;
   font-family: "abramo";
   opacity: 0.4;
