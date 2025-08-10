@@ -76,3 +76,43 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* react-image-gallery 썸네일 스타일 오버라이드 */
+.image-gallery-thumbnail {
+  width: 80px !important;
+  height: 80px !important;
+  min-width: 80px !important;
+  max-width: 80px !important;
+  min-height: 80px !important;
+  max-height: 80px !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  margin: 0 4px !important;
+  overflow: hidden !important;
+  border-radius: 4px !important;
+  box-sizing: border-box !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+
+.image-gallery-thumbnail img {
+  width: 80px !important;
+  height: 80px !important;
+  min-width: 80px !important;
+  max-width: 80px !important;
+  min-height: 80px !important;
+  max-height: 80px !important;
+  object-fit: cover !important;
+  border-radius: 4px !important;
+  display: block !important;
+  border: none !important;
+  box-sizing: border-box !important;
+}
+
+.image-gallery-thumbnail.active {
+  border-color: var(--title-color, #666) !important;
+}
+
+.image-gallery-thumbnails {
+  padding: 5px 0 !important;
+}

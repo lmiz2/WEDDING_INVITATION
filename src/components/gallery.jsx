@@ -19,6 +19,7 @@ const Title = styled.p`
   text-align: center;
 `;
 
+
 const images = [];
 
 const Gallery = () => {
