@@ -43,7 +43,7 @@ const WeddingInvitation = styled.p`
 const Title = () => {
   return (
   <Wrapper>
-    <GifBackground src={IMAGE_URL_PREFIX + "/0.gif"} alt="배경 GIF" />
+    <GifBackground src={IMAGE_URL_PREFIX + "/wedding_invitation_main.gif"} alt="배경 GIF" />
     <WeddingInvitation>WEDDING INVITATION</WeddingInvitation>
     <Layout>
     </Layout>
