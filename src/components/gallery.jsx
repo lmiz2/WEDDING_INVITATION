@@ -24,7 +24,7 @@ const images = [];
 const Gallery = () => {
 
   useEffect(()=>{
-    for(let i = 1; i <= 19; i++) {
+    for(let i = 1; i <= 18; i++) {
       const imageUrl = IMAGE_URL_PREFIX + `/${i}.jpg`;
       images.push({
         original: imageUrl,
