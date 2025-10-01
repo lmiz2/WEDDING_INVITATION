@@ -1,0 +1,5 @@
+- `npm install` — install dependencies.
+- `npm start` or `npm run develop` — run Gatsby dev server.
+- `npm run build` — build static production bundle.
+- `npm run serve` — serve built site locally.
+- `npm run clean` — clear Gatsby cache if builds misbehave.

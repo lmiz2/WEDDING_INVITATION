@@ -1,0 +1,4 @@
+- JavaScript (ES6) with React function components; hooks (e.g., useEffect) and arrow functions.
+- Styling via `styled-components`; layout often built with Ant Design components (Divider, Typography).
+- Imports group by libraries then local assets; components exported as defaults; minimal inline commenting.
+- Image assets managed through arrays of URLs and `react-image-gallery`; clipboard/sharing handled via helper libraries.
