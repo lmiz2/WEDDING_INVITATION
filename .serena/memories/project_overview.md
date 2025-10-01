@@ -1,0 +1,3 @@
+- Gatsby/React single-page wedding invitation site with sections for greetings, image gallery, bank account info, map, and sharing.
+- Primary customization through `config.js` for names, accounts, wedding details; Kakao map config in `src/components/location.jsx`.
+- Deployed template originally targeted for mobile view; includes KakaoTalk sharing, clipboard copy, and animated sections.

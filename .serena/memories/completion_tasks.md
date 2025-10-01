@@ -1,0 +1,4 @@
+- Run `npm start` to verify UI updates in the Gatsby dev server when practical.
+- If build-related changes, run `npm run build` to confirm static bundle succeeds.
+- Manually spot-check interactive features (gallery, clipboard, Kakao share/map) affected by the change.
+- Document any config changes users must update (e.g., URLs, tokens).

@@ -1,0 +1,3 @@
+- Gatsby project: `src/pages/index.js` for main page composition; `src/components/` holds section components (gallery, share, greeting, location, etc.).
+- `src/styles/` and `src/assets/` manage shared styles and static files; `src/images/` for gallery assets.
+- Public assets/config in `config.js`; site-wide config via `gatsby-config.js`.

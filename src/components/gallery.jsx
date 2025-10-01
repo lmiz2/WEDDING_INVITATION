@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import ImageGallery from "react-image-gallery";
-import { Divider } from "antd";
+import { Divider, Modal } from "antd";
 import styled from "styled-components";
 import { IMAGE_URL_PREFIX } from "../../config";
 
@@ -17,6 +17,33 @@ const Title = styled.p`
   opacity: 0.85;
   margin-bottom: 0;
   text-align: center;
+`;
+
+const FullscreenModal = styled(Modal)`
+  && {
+    top: 0;
+    padding-bottom: 0;
+  }
+
+  && .ant-modal {
+    width: 100% !important;
+    max-width: 100%;
+    top: 0;
+    padding: 0;
+  }
+
+  && .ant-modal-content {
+    height: 100vh;
+    background-color: #000;
+  }
+
+  && .ant-modal-body {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const urls = [
@@ -45,20 +72,31 @@ const urls = [
   IMAGE_URL_PREFIX + `/17.jpg`,
   IMAGE_URL_PREFIX + `/18.jpg`,
 ];
-const images = [];
+const images = urls.map((imageUrl) => ({
+  original: imageUrl,
+  thumbnail: imageUrl,
+}));
 
 const Gallery = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  useEffect(()=>{
-    for(let i = 0; i < urls.length; i++) {
-      const imageUrl = urls[i]
-      images.push({
-        original: imageUrl,
-        thumbnail: imageUrl,
-      });
+  const handleImageClick = () => {
+    const activeImage = images[currentIndex];
+    if (!activeImage) {
+      return;
     }
-  })
-  
+
+    setSelectedImage(activeImage.original);
+    setIsModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+    setSelectedImage(null);
+  };
+
   return (
     <Wrapper>
       <Divider style={{ marginTop: 0, marginBottom: 32 }} plain>
@@ -68,7 +106,23 @@ const Gallery = () => {
         showPlayButton={false}
         showFullscreenButton={false}
         items={images}
+        onSlide={setCurrentIndex}
+        onClick={handleImageClick}
       />
+      <FullscreenModal
+        visible={isModalVisible}
+        footer={null}
+        onCancel={handleCloseModal}
+        centered
+      >
+        {selectedImage && (
+          <img
+            src={selectedImage}
+            alt="wedding gallery"
+            style={{ maxWidth: "100%", maxHeight: "100%" }}
+          />
+        )}
+      </FullscreenModal>
     </Wrapper>
   );
 };
