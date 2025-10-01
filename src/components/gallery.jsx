@@ -26,24 +26,71 @@ const FullscreenModal = styled(Modal)`
   }
 
   && .ant-modal {
-    width: 100% !important;
-    max-width: 100%;
+    width: 100vw !important;
+    max-width: 100vw;
+    height: 100vh;
+    margin: 0;
     top: 0;
     padding: 0;
   }
 
   && .ant-modal-content {
-    height: 100vh;
+    height: 100%;
     background-color: #000;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   && .ant-modal-body {
+    position: relative;
     padding: 0;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: #fff;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #fff;
+  }
+`;
+
+const FullscreenImage = styled.img`
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 `;
 
 const urls = [
@@ -72,6 +119,7 @@ const urls = [
   IMAGE_URL_PREFIX + `/17.jpg`,
   IMAGE_URL_PREFIX + `/18.jpg`,
 ];
+
 const images = urls.map((imageUrl) => ({
   original: imageUrl,
   thumbnail: imageUrl,
@@ -114,13 +162,13 @@ const Gallery = () => {
         footer={null}
         onCancel={handleCloseModal}
         centered
+        closable={false}
       >
+        <CloseButton type="button" onClick={handleCloseModal} aria-label="닫기">
+          ×
+        </CloseButton>
         {selectedImage && (
-          <img
-            src={selectedImage}
-            alt="wedding gallery"
-            style={{ maxWidth: "100%", maxHeight: "100%" }}
-          />
+          <FullscreenImage src={selectedImage} alt="wedding gallery" />
         )}
       </FullscreenModal>
     </Wrapper>
