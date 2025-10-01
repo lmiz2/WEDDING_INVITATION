@@ -100,10 +100,8 @@ const urls = [
   IMAGE_URL_PREFIX + `/noel_4.JPG`,
   IMAGE_URL_PREFIX + `/train_1.JPG`,
   IMAGE_URL_PREFIX + `/2.jpg`,
-  IMAGE_URL_PREFIX + `/3.jpg`,
   IMAGE_URL_PREFIX + `/4.jpg`,
   IMAGE_URL_PREFIX + `/19.jpg`,
-  IMAGE_URL_PREFIX + `/20.jpg`,
   IMAGE_URL_PREFIX + `/5.jpg`,
   IMAGE_URL_PREFIX + `/6.jpg`,
   IMAGE_URL_PREFIX + `/7.jpg`,
@@ -114,10 +112,8 @@ const urls = [
   IMAGE_URL_PREFIX + `/12.jpg`,
   IMAGE_URL_PREFIX + `/13.jpg`,
   IMAGE_URL_PREFIX + `/14.jpg`,
-  IMAGE_URL_PREFIX + `/15.jpg`,
   IMAGE_URL_PREFIX + `/16.jpg`,
   IMAGE_URL_PREFIX + `/17.jpg`,
-  IMAGE_URL_PREFIX + `/18.jpg`,
 ];
 
 const images = urls.map((imageUrl) => ({
