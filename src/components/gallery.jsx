@@ -98,8 +98,6 @@ const urls = [
   IMAGE_URL_PREFIX + `/noel_3.JPG`,
   IMAGE_URL_PREFIX + `/noel_2.JPG`,
   IMAGE_URL_PREFIX + `/noel_4.JPG`,
-  IMAGE_URL_PREFIX + `/train_1.JPG`,
-  IMAGE_URL_PREFIX + `/2.jpg`,
   IMAGE_URL_PREFIX + `/4.jpg`,
   IMAGE_URL_PREFIX + `/19.jpg`,
   IMAGE_URL_PREFIX + `/5.jpg`,
